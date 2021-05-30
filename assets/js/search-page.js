@@ -7,7 +7,32 @@ const nasaImagesURL = "https://images-api.nasa.gov"
 
 // From https://github.com/chrisccerami/mars-photo-api
 const nasaRoverPhotos = "https://mars-photos.herokuapp.com/"  //This is the one that doesn't require an API key
-
+let curiosityCameras = {"front hazard avoidance camera":"fhaz",
+                        "rear hazard avoidance camera":"rhaz",
+                        "mast camera":"mast",
+                        "chemistry and camera complex":"chemcam",
+                        "mars hand lens imager":"mahli",
+                        "mars descent imager":"mardi",
+                        "navigation camera":"navcam",
+                        "panoramic camera":"pancam",
+                        "miniture thermal emission spectrometer":"minites"}
+                        
+let prosperityCameras = { "rover up-look camera":"EDL_RUCAM",
+                          "rover down-look camera":"EDL_RDCAM",
+                          "descent stage down-look camera":"EDL_DDCAM",
+                          "parachute up-look camera a":"EDL_PUCAM1",
+                          "parachute up-look camera b":"EDL_PUCAM2",
+                          "navigation camera - left":"NAVCAM_LEFT",
+                          "navigation camera - right":"NAVCAM_RIGHT",
+                          "mast camera zoom - right":"MCZ_RIGHT",
+                          "mast camera zoom - left":"MCZ_LEFT",
+                          "front hazard avoidance camera - left":"FRONT_HAZCAM_LEFT_A",
+                          "front hazard avoidance camera - right":"FRONT_HAZCAM_RIGHT_A",
+                          "rear hazard avoidance camera - left":"REAR_HAZCAM_LEFT",
+                          "rear hazard avoidance camera - right":"REAR_HAZCAM_RIGHT",
+                          "MEDA Skycam":"SKYCAM",
+                          "Sherloc Watson Camera":"SHERLOC_WATSON"
+}
 
 // Elements in main search area
 const searchBtnElement = document.getElementById("search-btn");
@@ -25,6 +50,11 @@ const card1SelectElement = document.getElementById("card-1-select-btn")
 
 //Elements for photos on search screen
 const tripPhoto1Element = document.getElementById("trip-photo-1")
+const roverSelectElement = document.getElementById("rover-select")
+const roverCameraElement = document.getElementById("rover-camera")
+
+
+
 
 
 // Functions
