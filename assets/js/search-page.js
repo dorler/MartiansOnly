@@ -25,7 +25,7 @@ let curiosityCameras = {"fhaz":"front hazard avoidance camera",
                         "pancam":"panoramic camera",
                         "minites":"miniture thermal emission spectrometer"}
                         
-let perserveranceCameras = { "EDL_RUCAM":"rover up-look camera",
+let perseveranceCameras = { "EDL_RUCAM":"rover up-look camera",
                           "EDL_RDCAM":"rover down-look camera",
                           "EDL_DDCAM":"descent stage down-look camera",
                           "EDL_PUCAM!":"parachute up-look camera a",
@@ -110,14 +110,14 @@ for(index in curiosityCameras) {
   }
 }
 
-function selectPerserverance(){
+function selectPerseverance(){
   //This will fill the select options for the camera choices on Curiosity
   // create option using DOM
-console.log("Starting Perserverance fill")
+console.log("Starting Perseverance fill")
 //Clear any existing options
 selectOptions.options.length = 0;
-for(index in perserveranceCameras) {
-  selectOptions.options[selectOptions.options.length] = new Option(perserveranceCameras[index], index);
+for(index in perseveranceCameras) {
+  selectOptions.options[selectOptions.options.length] = new Option(perseveranceCameras[index], index);
   }
 }
 
@@ -229,11 +229,11 @@ $("#roverCuriosity").click(function() {
   selectCuriosity()
 })
 
-$("#roverPerserverance").click(function() {
-  // User chose Perserverance
-  console.log("chose Perserverance")
-  roverSelected = "Perseverance" //misspelling is intentional
-  selectPerserverance()
+$("#roverPerseverance").click(function() {
+  // User chose Perseverance
+  console.log("chose Perseverance")
+  roverSelected = "Perseverance" 
+  selectPerseverance()
 })
 
 $("#fetchRoverImages").click(function(){
