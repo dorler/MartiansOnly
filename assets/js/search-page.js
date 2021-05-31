@@ -123,11 +123,13 @@ for(index in perserveranceCameras) {
 
 function fetchRoverImages(){
   // Base query string url
-  debugger
+  //debugger
   let qry1 = ""
   let qry2 = ""
   let apiUrl = nasaRoverPhotos + "api/v1/rovers/" + roverSelected + "/photos?"
   solSelected = document.querySelector("#solDate").value
+  let imgLocation = ""
+  let imgElement = ""
   if (solSelected.length>0){
     //User input a sol value
     qry1 = "sol=" + solSelected.toString()
@@ -155,6 +157,23 @@ function fetchRoverImages(){
     if (response.ok) {
       response.json().then(function(data) {
         console.log(data);
+        // Retrieved data, update image sources
+        debugger
+        for (i=1;i<13;i++){
+          imgLocation = "#image" + i.toString()
+          imgElement = document.querySelector(imgLocation)
+          if (data.photos[i-1]){
+            imgElement.src = data.photos[i-1].img_src
+            imgElement.style.visibility = "visible"
+          }
+          else if (i===1) {
+            // No images for this search
+            document.querySelector("#image1Caption").textContent = "No results returned"
+          }
+          else{
+            imgElement.style.visibility = "hidden"
+          }
+        }
       });
     }
     else {
