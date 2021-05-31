@@ -158,20 +158,23 @@ function fetchRoverImages(){
       response.json().then(function(data) {
         console.log(data);
         // Retrieved data, update image sources
-        debugger
+        //debugger
         for (i=1;i<13;i++){
           imgLocation = "#image" + i.toString()
           imgElement = document.querySelector(imgLocation)
           if (data.photos[i-1]){
             imgElement.src = data.photos[i-1].img_src
             imgElement.style.visibility = "visible"
+            document.querySelector(imgLocation + "Caption").textContent = data.photos[i-1].earth_date
           }
           else if (i===1) {
             // No images for this search
+            imgElement.src = ""
             document.querySelector("#image1Caption").textContent = "No results returned"
           }
           else{
             imgElement.style.visibility = "hidden"
+            document.querySelector(imgLocation + "Caption").textContent = ""
           }
         }
       });
