@@ -3,6 +3,10 @@
 // May/June 2021
 
 // Globals
+let roverSelected = ""
+let solSelected = -1
+let cameraSelected = ""
+let earthDateSelected = ""
 
 // NASA API key -- if we need it
 const nasaAPI = "fhR8LebqBdyU2Hw48hdGz8oD0LG6VHZq0U0hx6tb"
@@ -21,7 +25,7 @@ let curiosityCameras = {"fhaz":"front hazard avoidance camera",
                         "pancam":"panoramic camera",
                         "minites":"miniture thermal emission spectrometer"}
                         
-let prosperityCameras = { "EDL_RUCAM":"rover up-look camera",
+let perserveranceCameras = { "EDL_RUCAM":"rover up-look camera",
                           "EDL_RDCAM":"rover down-look camera",
                           "EDL_DDCAM":"descent stage down-look camera",
                           "EDL_PUCAM!":"parachute up-look camera a",
@@ -35,7 +39,9 @@ let prosperityCameras = { "EDL_RUCAM":"rover up-look camera",
                           "REAR_HAZCAM_LEFT":"rear hazard avoidance camera - left",
                           "REAR_HAZCAM_RIGHT":"rear hazard avoidance camera - right",
                           "SKYCAM":"MEDA Skycam",
-                          "SHERLOC_WATSON":"Sherloc Watson Camera"
+                          "SHERLOC_WATSON":"Sherloc Watson Camera",
+                          "SUPERCAM_RMI":"SuperCam Remote Micro Imager",
+                          "LCAM":"Lander Vision System Camera"
 }
 
 
@@ -99,25 +105,64 @@ function selectCuriosity(){
 console.log("Starting Curiosity fill")
 //Clear any existing options
 selectOptions.options.length = 0;
-
 for(index in curiosityCameras) {
   selectOptions.options[selectOptions.options.length] = new Option(curiosityCameras[index], index);
   }
 }
 
-function selectProsperity(){
+function selectPerserverance(){
   //This will fill the select options for the camera choices on Curiosity
   // create option using DOM
-console.log("Starting Prosperity fill")
+console.log("Starting Perserverance fill")
 //Clear any existing options
 selectOptions.options.length = 0;
-
-for(index in prosperityCameras) {
-  selectOptions.options[selectOptions.options.length] = new Option(prosperityCameras[index], index);
+for(index in perserveranceCameras) {
+  selectOptions.options[selectOptions.options.length] = new Option(perserveranceCameras[index], index);
   }
 }
 
+function fetchRoverImages(){
+  // Base query string url
+  debugger
+  let qry1 = ""
+  let qry2 = ""
+  let apiUrl = nasaRoverPhotos + "api/v1/rovers/" + roverSelected + "/photos?"
+  solSelected = document.querySelector("#solDate").value
+  if (solSelected.length>0){
+    //User input a sol value
+    qry1 = "sol=" + solSelected.toString()
+  }
+  if (selectCamera.value){
+    //User selected camera
+    qry2 = "camera=" + selectCamera.value
+  }
+  if ((earthDateSelected)&& (solSelected < 0)){
+    // future feature
+    qry1 = "earth_date=" + earthDateSelected
+  }
+  if (qry1.length>0){
+    apiUrl = apiUrl + qry1 + "&" + qry2
+  }
+  else{
+    apiUrl = apiUrl + qry2
+  }
 
+  console.log(apiUrl)
+  console.log("https://mars-photos.herokuapp.com/api/v1/rovers/Perseverance/photos?sol=98")
+
+  fetch(apiUrl).then(function(response) {
+    // request was successful
+    if (response.ok) {
+      response.json().then(function(data) {
+        console.log(data);
+      });
+    }
+    else {
+      alert("There was a problem with your request!");
+    }
+  });
+ 
+}
 
 
 
@@ -158,17 +203,20 @@ $("#card-1-select-btn").click(function() {
 $("#roverCuriosity").click(function() {
   // User chose Curiosity
   console.log("chose Curiosity")
+  roverSelected = "curiosity"
   selectCuriosity()
 })
 
-$("#roverProsperity").click(function() {
-  // User chose Prosperity
-  console.log("chose Prosperity")
-  selectProsperity()
+$("#roverPerserverance").click(function() {
+  // User chose Perserverance
+  console.log("chose Perserverance")
+  roverSelected = "Perseverance" //misspelling is intentional
+  selectPerserverance()
 })
 
-$("#getRoverImages").click(function(){
+$("#fetchRoverImages").click(function(){
   // Fetch images
   console.log("fetch images")
-  fFetch
+  fetchRoverImages()
+
 })
