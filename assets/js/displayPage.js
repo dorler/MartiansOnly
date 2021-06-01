@@ -2,6 +2,11 @@ var searchFlight = document.querySelector("#search-flight");
 var departFrom = document.querySelector("#departure-option");
 var destination = document.querySelector("#destination");
 var departDate = document.querySelector("#dateSelector");
+var results = document.querySelector("#results");
+var airlineName = document.querySelector("#airlineName");
+var ticketDate = document.querySelector("#ticketDate");
+var price = document.querySelector("#price");
+var passengerName = document.querySelector("#passengerName");
 
 
 var getMarsPics = function() {
@@ -40,10 +45,19 @@ function getMarsWeather() {
     });
 
 };
+
+var ticketGen = function() {
+
+    airlineName.innerHTML = generatedAirline.value;
+
+    ticketDate.innerHTML = departDate.value;
+
+    price.innerHTML = "$" + Math.round(Math.random() * 10000)/100
+
+
+    results.classList.remove("hide");
+}
 */
-
-
-
 
 
 
