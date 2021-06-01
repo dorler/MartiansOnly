@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="stylesheet" href="./assets/css/style.css"/>
   </head>
-  <body>
-  <!---->
+  
+  <body class="text-center" >
     <!--Navigation Bar-->
     <div class="title-bar" data-responsive-toggle="realEstateMenu" data-hide-for="small">
       <div class="top-bar-left">
@@ -24,59 +24,68 @@
     <!-- /Navigation -->
 
     <!--Mars Hero-->
-        <div class="hero-section" id="hero">
-          <div class="hero-section-text">
-            <h1> Vacation on Mars</h1>
-            <h5> We are excited to offically announce the opportunity for individuals to
-               book there tickets to finally leave this planet. 
-            </h5>
-          </div>
-        </div>  
-      <!--Do we want to add the search functionality to the Hero section? -->  
+      <div class="hero-section" id="hero">
+        <div class="hero-section-text">
+          <h1> Vacation on Mars</h1>
+          <h4><small> We are excited to offically announce the opportunity for individuals to
+               book there tickets to finally leave this planet. </small>
+          </h4>
+        </div>
+      </div>  
+  
+   <!--Weather Widget Container -->
+      <div class="weather-widget text-right float-right" >
+        <div class="row column">
+          <br>
+          <iframe width="240px" height="870" scrolling="yes" frameborder="0" src="http://cab.inta-csic.es/rems/wp-content/plugins/marsweather-widget/widget.php?lang=en"></iframe>
+        </div>
+      </div>
+
     <!--Search Form-->
-    <div class="search-form" id="search-flight">
-        <form>
-            <div class="grid-container">
-              <div class="grid-x grid-padding-x">
-                <div class="medium-6 cell" >
-                  <label >Departing From:
-                    <select id="departure-option">
-                        <option value = "USA" id="USA" >United States</option>
-                        <option value = "China" id="China">China</option>
-                        <option value = "Russia" id="Russia">Russia</option>
-                        </select>
-                  </label>
-                </div>
-                <div class="grid-x grid-padding-x">
-                    <div class="medium-6 cell">
-                      <label>Arriving To:
-                        <select type="dropdown" id="destination" >
-                            <option value = "Soujourn">Soujorn</option>
-                            <option value = "Curiousity">Curiosity</option>
-                            <option value = "Spirit">Spirit</option>
-                            <option value = "Perseverance">Perseverance</option>
-                            </select>
-                      </label>
-                    </div>
-                <div class="medium-6 cell">
-                  <label>Departure Date:
-                    <input type="date" placeholder="">
-                  </label>
-                </div>
-                <div class="input-group-button">
-                  <input type="submit" class="button" id="search-flight" value="search-flights">
-                </div>
-              </div>
+  <div class="search-form" id="search-flight">
+  <form>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell" >
+          <label >Departing From:
+            <select id="departure-option">
+                <option value = "USA" id="USA" >United States</option>
+                <option value = "China" id="China">China</option>
+                <option value = "Russia" id="Russia">Russia</option>
+                </select>
+          </label>
+        </div>
+        <div class="grid-x grid-padding-x">
+            <div class="medium-6 cell">
+              <label>Arriving To:
+                <select type="dropdown" id="destination" >
+                    <option value = "Soujourn">Soujorn</option>
+                    <option value = "Curiousity">Curiosity</option>
+                    <option value = "Spirit">Spirit</option>
+                    <option value = "Perseverance">Perseverance</option>
+                    </select>
+              </label>
             </div>
-          </form>
+        <div class="medium-6 cell">
+          <label>Departure Date:
+            <input type="date" placeholder="">
+          </label>
+        </div>
+        <div class="input-group-button">
+          <input type="submit" class="button" id="search-flight" value="search-flights">
+        </div>
+      </div>
+    </div>
+  </form>
     <!--displayed search results-->  
     <div class="search-results hide" id="results" >
     <table>
         <thead>
           <tr>
-            <th width="200">Airline</th>
+            <th width="150">Airline</th>
             <th width="150">Departure Date </th>
             <th width="150">Price</th>
+            <th width="100">Select</th>
           </tr>
         </thead>
         <tbody>
@@ -95,14 +104,14 @@
             <td>Content Goes Here</td>
             <td>Content Goes Here</td>
           </tr>
+          <!--We could anchor or button the 4th part of the table to lead to site 2-->
+          <tr>
+            <td>Content Goes Here</td>
+            <td>content goes here</td>
+            <td>content goes here</td>
+            <td>content goes here</td>
+          </tr>
         </tbody>
       </table>
     </div>
-</div>
-<!--About Us Section-->
-  
-
-<!--Image Gallery or Weather Widget? -->
-
-<!--Contact us-->
-    </body>
+</body>
