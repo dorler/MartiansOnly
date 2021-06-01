@@ -4,9 +4,9 @@ var destination = document.querySelector("#destination");
 var departDate = document.querySelector("#dateSelector");
 
 
-function getMarsPics() {
+var getMarsPics = function() {
 
-    var picsApi = "https://api.nasa.gov/mars-photos/api/v1/rovers/" + destination.value + "/photos?sol=1000&camera=fhaz&api_key=gx8qpDn3blyfVIl6JTpYJUW5ddk4mpO1cUgBqvKO";
+    var picsApi = "https://api.nasa.gov/mars-photos/api/v1/rovers/" + destination.value + "/photos?sol=10&api_key=gx8qpDn3blyfVIl6JTpYJUW5ddk4mpO1cUgBqvKO";
 
     fetch(picsApi).then(function(response) {
 
@@ -15,9 +15,9 @@ function getMarsPics() {
                 console.log(response);
                 console.log(data);
             })
-        } else {
+        } /* else {
             alert("Error: " + response.statusText)
-        };
+        }; */
     });
 
 };
