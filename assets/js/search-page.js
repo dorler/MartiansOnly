@@ -180,7 +180,7 @@ function fetchRoverImages(){
       });
     }
     else {
-      alert("There was a problem with your request!");
+      console.log("Error with request!");
     }
   });
  
