@@ -4,6 +4,10 @@ let apiUrl = "https://images-api.nasa.gov/"
 
 
 
+// Look at https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf 
+// for the fetch api data.
+
+
 
 function fetchImages(){
     
