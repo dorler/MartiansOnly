@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
   </head>
   
-  <body class="text-center" >
+  <body >
     <!--Navigation Bar-->
     <div class="title-bar" data-responsive-toggle="realEstateMenu" data-hide-for="small">
       <div class="top-bar-left">
@@ -21,7 +21,6 @@
         </ul>
       </div>
     </div>
-    <!-- /Navigation -->
 
     <!--Mars Hero-->
       <div class="hero-section" id="hero">
@@ -32,23 +31,23 @@
           </h4>
         </div>
       </div>  
-  
-   <!--Weather Widget Container -->
-      <div class="weather-widget text-right float-right" >
-        <div class="row column">
-          <br>
-          <iframe width="240px" height="870" scrolling="yes" frameborder="0" src="http://cab.inta-csic.es/rems/wp-content/plugins/marsweather-widget/widget.php?lang=en"></iframe>
-        </div>
+
+  <section class="main">
+    <!--Weather Widget Container -->
+    <div class="weather-widget float-right" >
+      <div class="row column absolute">
+        <br>
+        <iframe width="240px" height="870" scrolling="yes" frameborder="0" src="http://cab.inta-csic.es/rems/wp-content/plugins/marsweather-widget/widget.php?lang=en"></iframe>
       </div>
+    </div>
 
     <!--Search Form-->
-  <div class="search-form" id="search-flight">
-  <form>
-    <div class="grid-container">
-      <div class="grid-x grid-padding-x">
-        <div class="medium-6 cell" >
-          <label >Departing From:
-            <select id="departure-option">
+    <div class="form-group">
+      <div class="grid-container center">
+        <div class="grid-x grid-padding-x">
+          <div class="medium-6 cell">
+            <label>Departing From:
+              <select id="departure-option">
                 <option value = "USA" id="USA" >United States</option>
                 <option value = "China" id="China">China</option>
                 <option value = "Russia" id="Russia">Russia</option>
@@ -78,40 +77,47 @@
     </div>
   </form>
     <!--displayed search results-->  
-    <div class="search-results hide" id="results" >
+  <div class="search-results hide " id="results" >
     <table>
         <thead>
           <tr>
             <th width="150">Airline</th>
             <th width="150">Departure Date </th>
             <th width="150">Price</th>
-            <th width="100">Select</th>
+            <th width="150">Select</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Content Goes Here</td>
             <td>Content Goes Here</td>
-            <td>Content Goes Here</td>
+            <td>Content Goes Here </td>
+            <td>link to book</td>
           </tr>
           <tr>
             <td>Content Goes Here</td>
             <td>Content Goes Here</td>
             <td>Content Goes Here</td>
+            <td>link to book </td>
           </tr>
           <tr>
             <td>Content Goes Here</td>
             <td>Content Goes Here</td>
             <td>Content Goes Here</td>
+            <td>link to book </td>
           </tr>
-          <!--We could anchor or button the 4th part of the table to lead to site 2-->
           <tr>
-            <td>Content Goes Here</td>
-            <td>content goes here</td>
-            <td>content goes here</td>
-            <td>content goes here</td>
+            <td> SpaceX </td>
+            <td>lorem ipsum </td>
+            <td class="spaceX"> lorem ipsum </td>
+            <td class="nasa">link to book </td>
           </tr>
         </tbody>
       </table>
     </div>
+    </section>
+    <!--Quote-->
+    <blockquote>
+      Space exploration is a force of nature unto itself that no other force in society can rival. 
+      <cite>Neil deGrasse Tyson</cite>
 </body>
