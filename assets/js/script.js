@@ -1,7 +1,7 @@
 var searchBtn = document.querySelector("#search-flight");
 var departFrom = document.querySelector("#departure-option");
 var destination = document.querySelector("#destination");
-var departDate = document.querySelector("#dates");
+var departDate = document.querySelector("#departure-date");
 
 
 
@@ -20,6 +20,7 @@ function saveFlight(event) {
     localStorage.setItem("departDateLS", departDate);
 
     console.log(departFrom, destination, departDate);
+
 }
 
 
