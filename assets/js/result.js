@@ -1,12 +1,4 @@
-4// Globals
-var departFromResult = JSON.stringify(localStorage.getItem("departFromLS"));
-
-var destinationResult = JSON.stringify(localStorage.getItem("destinationLS"));
-
-var departDateResult = JSON.stringify(localStorage.getItem("departDateLS"));
-
-
-console.log(departFromResult, destinationResult, departDateResult);
+// Globals
 
 let apiUrl = "https://images-api.nasa.gov/"
 
