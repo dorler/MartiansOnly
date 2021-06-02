@@ -7,9 +7,6 @@ var departDateResult = localStorage.getItem("departDateLS");
 
 console.log(departFromResult, destinationResult, departDateResult);
 
-console.log(departFromResult.value, destinationResult.value, departDateResult.value);
-
-console.log(typeof departFromResult, typeof destinationResult, typeof departDateResult);
 
 
 let apiUrl = "https://images-api.nasa.gov/"
