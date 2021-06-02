@@ -13,13 +13,13 @@ function saveFlight(event) {
 
     console.log(departFrom, destination, departDate);
 
-    localStorage.setItem("departFromLS", departFrom);
+    localStorage.setItem("departFromLS", departFrom.value);
 
-    localStorage.setItem("destinationLS", destination);
+    localStorage.setItem("destinationLS", destination.value);
 
-    localStorage.setItem("departDateLS", departDate);
+    localStorage.setItem("departDateLS", departDate.value);
 
-    console.log(departFrom, destination, departDate);
+    console.log(departFrom.value, destination.value, departDate.value);
 
 }
 
