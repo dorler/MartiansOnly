@@ -33,30 +33,18 @@
       </div>  
 
   <section class="main">
-    <!--Weather Widget Container -->
-    <div class="weather-widget float-right" >
-      <div class="row column absolute">
-        <br>
-        <iframe width="240px" height="870" scrolling="yes" frameborder="0" src="http://cab.inta-csic.es/rems/wp-content/plugins/marsweather-widget/widget.php?lang=en"></iframe>
-      </div>
-    </div>
-
+  
     <!--Search Form-->
-    <div class="form-group">
-      <div class="grid-container center">
-        <div class="grid-x grid-padding-x">
+    <form class="form-group">
           <div class="medium-6 cell">
-            <label>Departing From:
-              <select id="departure-option">
+            <label class="medium-6 cell">Departing From:
+              <select id="departure-option" placeholder="Departing From:">
                 <option value = "USA" id="USA" >United States</option>
                 <option value = "China" id="China">China</option>
                 <option value = "Russia" id="Russia">Russia</option>
                 </select>
-          </label>
-        </div>
-        <div class="grid-x grid-padding-x">
-            <div class="medium-6 cell">
-              <label>Arriving To:
+             </label>
+              <label class="medium-6 cell">Arriving To:
                 <select type="dropdown" id="destination" >
                     <option value = "Soujourn">Soujorn</option>
                     <option value = "Curiousity">Curiosity</option>
@@ -64,57 +52,23 @@
                     <option value = "Perseverance">Perseverance</option>
                     </select>
               </label>
-            </div>
-        <div class="medium-6 cell">
-          <label>Departure Date:
+            <!--Departure Date-->
+          <label class="medium-6 cell">Departure Date:
             <input type="date" placeholder="">
           </label>
         </div>
+        <!--button-->
         <div class="input-group-button">
           <input type="submit" class="button" id="search-flight" value="search-flights">
         </div>
-      </div>
+      </form>
     </div>
-  </form>
-    <!--displayed search results-->  
-  <div class="search-results hide" id="results" >
-    <table>
-        <thead>
-          <tr>
-            <th width="150">Airline</th>
-            <th width="150">Departure Date </th>
-            <th width="150">Price</th>
-            <th width="150">Select</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Content Goes Here</td>
-            <td>Content Goes Here</td>
-            <td>Content Goes Here </td>
-            <td>link to book</td>
-          </tr>
-          <tr>
-            <td>Content Goes Here</td>
-            <td>Content Goes Here</td>
-            <td>Content Goes Here</td>
-            <td>link to book </td>
-          </tr>
-          <tr>
-            <td>Content Goes Here</td>
-            <td>Content Goes Here</td>
-            <td>Content Goes Here</td>
-            <td>link to book </td>
-          </tr>
-          <tr>
-            <td> SpaceX </td>
-            <td>lorem ipsum </td>
-            <td class="spaceX"> lorem ipsum </td>
-            <td class="nasa">link to book </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  </div>
+
+
+
+
+    
     </section>
     <!--Quote-->
     <blockquote>
