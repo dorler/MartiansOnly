@@ -42,28 +42,39 @@
     </div>
 
     <!--Search Form-->
-    <div class="form-group">
-      <div class="grid-container center">
-        <div class="grid-x grid-padding-x">
-          <div class="medium-6 cell">
-            <label>Departing From:
-              <select id="departure-option">
-                <option value = "USA" id="USA" >United States</option>
-                <option value = "China" id="China">China</option>
-                <option value = "Russia" id="Russia">Russia</option>
-                </select>
-          </label>
-        </div>
-        <div class="grid-x grid-padding-x">
-            <div class="medium-6 cell">
-              <label>Arriving To:
-                <select type="dropdown" id="destination" >
-                    <option value = "Soujourn">Soujorn</option>
-                    <option value = "Curiousity">Curiosity</option>
-                    <option value = "Spirit">Spirit</option>
-                    <option value = "Perseverance">Perseverance</option>
-                    </select>
-              </label>
+    <div class="search-form" id="search-flight">
+        <form>
+            <div class="grid-container">
+              <div class="grid-x grid-padding-x">
+                <div class="medium-6 cell" >
+                  <label >Departing From:
+                    <select id="departure-option">
+                        <option value = "USA" id="USA" >United States</option>
+                        <option value = "China" id="China">China</option>
+                        <option value = "Russia" id="Russia">Russia</option>
+                        </select>
+                  </label>
+                </div>
+                <div class="grid-x grid-padding-x">
+                    <div class="medium-6 cell">
+                      <label>Arriving To:
+                        <select type="dropdown" id="destination" >
+                            <option value = "Soujourn">Soujorn</option>
+                            <option value = "Curiousity">Curiosity</option>
+                            <option value = "Spirit">Spirit</option>
+                            <option value = "Perseverance">Perseverance</option>
+                            </select>
+                      </label>
+                    </div>
+                <div class="medium-6 cell">
+                  <label>Departure Date:
+                    <input type="date" id="dateSelector" placeholder="">
+                  </label>
+                </div>
+                <div class="input-group-button">
+                  <input type="submit" class="button" id="search-flight" value="search-flights">
+                </div>
+              </div>
             </div>
         <div class="medium-6 cell">
           <label>Departure Date:
@@ -115,9 +126,16 @@
         </tbody>
       </table>
     </div>
-    </section>
-    <!--Quote-->
-    <blockquote>
-      Space exploration is a force of nature unto itself that no other force in society can rival. 
-      <cite>Neil deGrasse Tyson</cite>
-</body>
+</div>
+<!--About Us Section-->
+  
+
+<!--Image Gallery or Weather Widget? -->
+
+<!--Contact us-->
+
+
+<!--Scripts/Logic-->
+<script src="./assets/js/script.js"></script>
+<script src="./assets/js/displayPage.js"></script>
+    </body>
