@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="stylesheet" href="./assets/css/style.css"/>
   </head>
-  <body>
-  <!---->
+  
+  <body >
     <!--Navigation Bar-->
     <div class="title-bar" data-responsive-toggle="realEstateMenu" data-hide-for="small">
       <div class="top-bar-left">
@@ -21,93 +21,57 @@
         </ul>
       </div>
     </div>
-    <!-- /Navigation -->
 
     <!--Mars Hero-->
-        <div class="hero-section" id="hero">
-          <div class="hero-section-text">
-            <h1> Vacation on Mars</h1>
-            <h5> We are excited to offically announce the opportunity for individuals to
-               book there tickets to finally leave this planet. 
-            </h5>
-          </div>
-        </div>  
-      <!--Do we want to add the search functionality to the Hero section? -->  
-    <!--Search Form-->
-    <div class="search-form" id="search-flight">
-        <form>
-            <div class="grid-container">
-              <div class="grid-x grid-padding-x">
-                <div class="medium-6 cell" >
-                  <label >Departing From:
-                    <select id="departure-option">
-                        <option value = "USA" id="USA" >United States</option>
-                        <option value = "China" id="China">China</option>
-                        <option value = "Russia" id="Russia">Russia</option>
-                        </select>
-                  </label>
-                </div>
-                <div class="grid-x grid-padding-x">
-                    <div class="medium-6 cell">
-                      <label>Arriving To:
-                        <select type="dropdown" id="destination" >
-                            <option value = "Soujourn">Soujorn</option>
-                            <option value = "Curiousity">Curiosity</option>
-                            <option value = "Spirit">Spirit</option>
-                            <option value = "Perseverance">Perseverance</option>
-                            </select>
-                      </label>
-                    </div>
-                <div class="medium-6 cell">
-                  <label>Departure Date:
-                    <input type="date" id="dateSelector" placeholder="">
-                  </label>
-                </div>
-                <div class="input-group-button">
-                  <input type="submit" class="button" id="search-flight" value="search-flights">
-                </div>
-              </div>
-            </div>
-          </form>
-    <!--displayed search results-->  
-    <div class="search-results hide" id="results" >
-    <table>
-        <thead>
-          <tr>
-            <th width="200">Airline</th>
-            <th width="150">Departure Date </th>
-            <th width="150">Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Content Goes Here</td>
-            <td>Content Goes Here</td>
-            <td>Content Goes Here</td>
-          </tr>
-          <tr>
-            <td>Content Goes Here</td>
-            <td>Content Goes Here</td>
-            <td>Content Goes Here</td>
-          </tr>
-          <tr>
-            <td>Content Goes Here</td>
-            <td>Content Goes Here</td>
-            <td>Content Goes Here</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-</div>
-<!--About Us Section-->
+      <div class="hero-section" id="hero">
+        <div class="hero-section-text">
+          <h1> Vacation on Mars</h1>
+          <h4><small> We are excited to offically announce the opportunity for individuals to
+               book there tickets to finally leave this planet. </small>
+          </h4>
+        </div>
+      </div>  
+
+  <section class="main">
   
+    <!--Search Form-->
+    <form class="form-group">
+          <div class="medium-6 cell">
+            <label class="medium-6 cell">Departing From:
+              <select id="departure-option" placeholder="Departing From:">
+                <option value = "USA" id="USA" >United States</option>
+                <option value = "China" id="China">China</option>
+                <option value = "Russia" id="Russia">Russia</option>
+                </select>
+             </label>
+              <label class="medium-6 cell">Arriving To:
+                <select type="dropdown" id="destination" >
+                    <option value = "Soujourn">Soujorn</option>
+                    <option value = "Curiousity">Curiosity</option>
+                    <option value = "Spirit">Spirit</option>
+                    <option value = "Perseverance">Perseverance</option>
+                    </select>
+              </label>
+            <!--Departure Date-->
+          <label class="medium-6 cell">Departure Date:
+            <input type="date" placeholder="">
+          </label>
+        </div>
+        <!--button-->
+        <div class="input-group-button">
+          <input type="submit" class="button" id="search-flight" value="search-flights">
+        </div>
+      </form>
+    </div>
+  </div>
 
-<!--Image Gallery or Weather Widget? -->
-
-<!--Contact us-->
 
 
-<!--Scripts/Logic-->
-<script src="./assets/js/script.js"></script>
-<script src="./assets/js/displayPage.js"></script>
-    </body>
+
+    
+    </section>
+    <!--Quote-->
+    <blockquote>
+      Space exploration is a force of nature unto itself that no other force in society can rival. 
+      <cite>Neil deGrasse Tyson</cite>
+</body>
