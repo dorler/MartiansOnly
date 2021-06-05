@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Flight Results </title>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+  </head>
+
+  <body> 
+
+<!--Flight Option Table appears -->
+<!--displayed search results-->  
+<div class="search-results" id="results" >
+    <table class="striped hover stack table">
+        <thead>
+          <tr>
+            <th width="150">Airline</th>
+            <th width="150">Departure</th>
+            <th width="150">Price</th>
+            <th width="150">Select</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="SpaceX">Space X</td>
+            <td id="timeSpaceX">9:00am</td>
+            <td id="priceSpaceX">  </td>
+            <td id="bookSpaceX">Book</td>
+          </tr>
+          <tr>
+            <td id="NASA">NASA</td>
+            <td id="timeNASA">4:00pm</td>
+            <td id="priceNASA"> </td>
+            <td id="bookNASA">Book</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--Ticket Form-->
+    <form class="callout text-center">
+        <h2>Book Your Ticket</h2>
+        <div class="floated-label-wrapper">
+          <label for="first-name">Full name</label>
+          <input type="text" id="first-name" name="First Name input" placeholder="First name">
+        </div>
+        <div class="floated-label-wrapper">
+          <label for="last-name">Last Name</label>
+          <input type="last-name" id="last-name" name="Last Name input" placeholder="Last Name">
+        </div>
+        <div class="floated-label-wrapper">
+          <label for="DOB">Date of Birth</label>
+          <input type="date" id="DOB" name="DOB" placeholder="DOB">
+        </div>
+        <input class="button expanded" type="submit" value="Book Flight">
+      </form>
+      
+
+
+
