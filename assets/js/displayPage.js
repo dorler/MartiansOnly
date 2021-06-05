@@ -1,4 +1,6 @@
 var bookFlight = document.querySelector("#book-flight");
+var passengerInput = document.querySelector("#passenger-input");
+var ticketResult = document.querySelector("#ticket-result");
 var departFrom = document.querySelector("#departure-option");
 var destination = document.querySelector("#destination");
 var departDate = document.querySelector("#dateSelector");
@@ -26,8 +28,8 @@ function priceGen() {
 }
 
 function ticketGen() {
-
-
+    passengerInput.classList.add("hide");
+    ticketResult.classList.remove("hide");
 
 
 
