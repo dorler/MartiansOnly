@@ -1,3 +1,9 @@
+var bookSpaceX = document.querySelector("#bookSpaceX");
+var bookNASA = document.querySelector("#bookNASA");
+var SpaceX = document.querySelector("#SpaceX");
+var NASA = document.querySelector("#NASA");
+var timeSpaceX = document.querySelector("#timeSpaceX");
+var timeNASA = document.querySelector("#timeNASA");
 var bookFlight = document.querySelector("#book-flight");
 var passengerInput = document.querySelector("#passenger-input");
 var ticketResult = document.querySelector("#ticket-result");
@@ -6,14 +12,19 @@ var destination = document.querySelector("#destination");
 var departDate = document.querySelector("#dateSelector");
 var priceSpaceX = document.querySelector("#priceSpaceX");
 var priceNASA = document.querySelector("#priceNASA");
-var firstName = document.querySelector("#first-name");
-var lastName = document.querySelector("#DOB");
+var firstNameInput = document.querySelector("#first-name");
+var lastNameInput = document.querySelector("#DOB");
 var from = localStorage.getItem("departFromLS");
 var toward = localStorage.getItem("destinationLS");
-var date = localStorage.getItem("departDateLS");
+var dateInput = localStorage.getItem("departDateLS");
+var ticketDate = document.querySelector("#ticket-date");
+var ticketFrom = document.querySelector("#ticket-from");
+var ticketToward = document.querySelector("#ticket-toward");
+var ticketLast = document.querySelector("#ticket-last-name");
+var ticketFirst = document.querySelector("#ticket-first-name");
 
 
-console.log(from, toward, date);
+console.log(from, toward, dateInput);
 console.log(from.value, toward.value, date.value);
 
 function priceGen() {
@@ -29,10 +40,31 @@ function priceGen() {
 
 function ticketGen() {
     passengerInput.classList.add("hide");
+
+    var ticketAirline = document.querySelector("#ticket-airline");
+    var ticketTime = document.querySelector("#ticket-time");
+    var ticketPrice = document.querySelector("#ticket-price");
+    ticketDate = dateInput.innerHTML;
+    ticketFrom = from.innerHTML;
+    ticketToward = toward.innerHTML;
+    var ticketLast = lastNameInput;
+    var ticketFirst = firstNameInput;
+
+    if(bookSpaceX === document.activeElement) {
+        ticketAirline.innerHTML = SpaceX.innerHTML
+        ticketPrice.innerHTML = priceSpaceX.innerHTML
+        ticketTime.innerHTML = timeSpaceX.innerHTML
+    };
+
+
+
+
+
+
+
+
+
     ticketResult.classList.remove("hide");
-
-
-
 };
 
 
