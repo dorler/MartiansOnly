@@ -1,10 +1,18 @@
-var searchFlight = document.querySelector("#search-flight");
+var bookFlight = document.querySelector("#book-flight");
 var departFrom = document.querySelector("#departure-option");
 var destination = document.querySelector("#destination");
 var departDate = document.querySelector("#dateSelector");
 var priceSpaceX = document.querySelector("#priceSpaceX");
 var priceNASA = document.querySelector("#priceNASA");
+var firstName = document.querySelector("#first-name");
+var lastName = document.querySelector("#DOB");
+var from = localStorage.getItem("departFromLS");
+var toward = localStorage.getItem("destinationLS");
+var date = localStorage.getItem("departDateLS");
 
+
+console.log(from, toward, date);
+console.log(from.value, toward.value, date.value);
 
 function priceGen() {
     var priceOne = Math.floor(Math.random() * 100000 + 100000)
@@ -17,7 +25,7 @@ function priceGen() {
     
 }
 
-function getMarsInfo() {
+function ticketGen() {
 
 
 
@@ -50,4 +58,4 @@ function getMarsInfo() {
 
 
 priceGen();
-searchFlight.addEventListener("click", getMarsInfo());
+bookFlight.addEventListener("click", ticketGen);
