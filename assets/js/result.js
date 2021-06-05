@@ -1,7 +1,13 @@
 // Globals
-
 let apiUrl = "https://images-api.nasa.gov/"
+var departFromResult = localStorage.getItem("departFromLS");
 
+var destinationResult = localStorage.getItem("destinationLS");
+
+var departDateResult = localStorage.getItem("departDateLS");
+
+console.log(departFromResult, destinationResult, departDateResult);
+console.log(departFromResult.value, destinationResult.value, departDateResult.value)
 
 
 // Look at https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf 
