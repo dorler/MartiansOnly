@@ -3,6 +3,7 @@ var NASAbtn = document.querySelector("#NASAbtn");
 var bookSpaceX = document.querySelector("#bookSpaceX");
 var bookNASA = document.querySelector("#bookNASA");
 var returnBtn = document.querySelector("#return");
+var returnMain = document.querySelector("#return-main");
 var SpaceX = document.querySelector("#SpaceX");
 var NASA = document.querySelector("#NASA");
 var timeSpaceX = document.querySelector("#timeSpaceX");
@@ -94,9 +95,14 @@ function ticketGen(event) {
 function returnBooking() {
     flightTable.classList.remove("hide");
     ticketResult.classList.add("hide");
-}
+};
 
+function backToMain() {
+    flightTable.classList.remove("hide");
+    ticketResult.classList.add("hide");
 
+    location = "./index.html";
+};
 
 
 
@@ -123,3 +129,4 @@ bookFlight.addEventListener("click", ticketGen);
 SpaceXbtn.addEventListener("click", choseSpaceX);
 NASAbtn.addEventListener("click", choseNASA);
 returnBtn.addEventListener("click", returnBooking);
+returnMain.addEventListener("click", backToMain);

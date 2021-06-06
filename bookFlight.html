@@ -10,62 +10,63 @@
 
   <body> 
 
-<!--Flight Option Table appears -->
-<!--displayed search results-->  
-<div class="search-results" id="results" >
-    <table id="flight-table" class="striped hover stack table">
-        <thead>
-          <tr>
-            <th width="150">Airline</th>
-            <th width="150">Departure</th>
-            <th width="150">Price</th>
-            <th width="150">Select</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td id="SpaceX">Space X</td>
-            <td id="timeSpaceX">9:00am</td>
-            <td id="priceSpaceX">  </td>
-            <td id="bookSpaceX"><button class="bookbtn" id="SpaceXbtn">Book</button></td>
-          </tr>
-          <tr>
-            <td id="NASA">NASA</td>
-            <td id="timeNASA">4:00pm</td>
-            <td id="priceNASA"> </td>
-            <td id="bookNASA"><button class="bookbtn" id="NASAbtn">Book</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <!--Ticket Form-->
-    <form id="submit-form" class="callout text-center hide">
-        <h2>Book Your Ticket</h2>
-        <div class="floated-label-wrapper">
-          <label for="first-name">Full name</label>
-          <input type="text" id="first-name" name="First Name input" placeholder="First name">
+    <!--Flight Option Table appears -->
+    <!--displayed search results-->  
+    <div class="search-results" id="results" >
+        <table id="flight-table" class="striped hover stack table">
+            <thead>
+              <tr>
+                <th width="150">Airline</th>
+                <th width="150">Departure</th>
+                <th width="150">Price</th>
+                <th width="150">Select</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="SpaceX">Space X</td>
+                <td id="timeSpaceX">9:00am</td>
+                <td id="priceSpaceX">  </td>
+                <td id="bookSpaceX"><button class="bookbtn" id="SpaceXbtn">Book</button></td>
+              </tr>
+              <tr>
+                <td id="NASA">NASA</td>
+                <td id="timeNASA">4:00pm</td>
+                <td id="priceNASA"> </td>
+                <td id="bookNASA"><button class="bookbtn" id="NASAbtn">Book</button></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="floated-label-wrapper">
-          <label for="last-name">Last Name</label>
-          <input type="last-name" id="last-name" name="Last Name input" placeholder="Last Name">
+        <!--Ticket Form-->
+        <form id="submit-form" class="callout text-center hide">
+            <h2>Book Your Ticket</h2>
+            <div class="floated-label-wrapper">
+              <label for="first-name">Full name</label>
+              <input type="text" id="first-name" name="First Name input" placeholder="First name">
+            </div>
+            <div class="floated-label-wrapper">
+              <label for="last-name">Last Name</label>
+              <input type="last-name" id="last-name" name="Last Name input" placeholder="Last Name">
+            </div>
+            <div class="floated-label-wrapper">
+              <label for="DOB">Date of Birth</label>
+              <input type="date" id="DOB" name="DOB" placeholder="DOB">
+            </div>
+            <input id="book-flight" class="button expanded" type="submit" value="Book Flight">
+          </form>
+        
+      <!--Ticket -->
+        <div id="marsticket" class="marsticket hide">
+          <div>
+            <p>Congrats on your one way ticket to mars, it will certainly be out of this world.</p>
+            <h2 id="ticket-first-name"> </h2> <h2 id="ticket-last-name"> </h2> 
+            <h3 id="ticket-from"> </h3> <h3 id="ticket-toward"> </h3>
+            <p> Departing on <h3 id="ticket-date"> </h3> at: <h3 id="ticket-time"></h3> </p> 
+          </div>
+          <input type="button" id="return" class="btn btn-primary" value="Back to Booking">
+          <input type="button" id="return-main" class="btn btn-primary" value="Main Page">
         </div>
-        <div class="floated-label-wrapper">
-          <label for="DOB">Date of Birth</label>
-          <input type="date" id="DOB" name="DOB" placeholder="DOB">
-        </div>
-        <input id="book-flight" class="button expanded" type="submit" value="Book Flight">
-      </form>
-    
-  <!--Ticket -->
-    <div id="marsticket" class="marsticket hide">
-      <div>
-        <p>Congrats on your one way ticket to mars, it will certainly be out of this world.</p>
-        <h2 id="ticket-first-name"> </h2> <h2 id="ticket-last-name"> </h2> 
-        <h3 id="ticket-from"> </h3> <h3 id="ticket-toward"> </h3>
-        <p> Departing on <h3 id="ticket-date"> </h3> at: <h3 id="ticket-time"></h3> </p> 
-      </div>
-      <input type="button" id="return" class="btn btn-primary" value="Back to Booking">
-    </div>
 
 
       <script src="./assets/js/displayPage.js"></script>
