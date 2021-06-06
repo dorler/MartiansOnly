@@ -25,7 +25,7 @@ var ticketFirst = document.querySelector("#ticket-first-name");
 
 
 console.log(from, toward, dateInput);
-console.log(from.value, toward.value, date.value);
+
 
 function priceGen() {
     var priceOne = Math.floor(Math.random() * 100000 + 100000)
@@ -36,8 +36,9 @@ function priceGen() {
 
     priceNASA.innerHTML = "$" + priceTwo
     
-}
+};
 
+/*
 function ticketGen() {
     passengerInput.classList.add("hide");
 
@@ -66,7 +67,7 @@ function ticketGen() {
 
     ticketResult.classList.remove("hide");
 };
-
+*/
 
 
 
