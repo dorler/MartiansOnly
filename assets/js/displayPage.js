@@ -30,6 +30,7 @@ var ticketAirline = document.querySelector("#ticket-airline");
 var ticketTime = document.querySelector("#ticket-time");
 var ticketPrice = document.querySelector("#ticket-price");
 var flightTable = document.querySelector("#flight-table");
+var marsWeather = document.querySelector("#my-info");
 
 
 console.log(from, toward, dateInput);
@@ -90,16 +91,19 @@ function ticketGen(event) {
 
 
     ticketResult.classList.remove("hide");
+    marsWeather.classList.remove("hide");
 };
 
 function returnBooking() {
     flightTable.classList.remove("hide");
     ticketResult.classList.add("hide");
+    marsWeather.classList.add("hide");
 };
 
 function backToMain() {
     flightTable.classList.remove("hide");
     ticketResult.classList.add("hide");
+    marsWeather.classList.add("hide");
 
     location = "./index.html";
 };
