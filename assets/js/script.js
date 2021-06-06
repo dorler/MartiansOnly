@@ -1,4 +1,3 @@
-
 var searchBtn = document.querySelector("#search-flight");
 var departFrom = document.querySelector("#depart");
 var destination = document.querySelector("#arrival");

@@ -31,6 +31,7 @@ var ticketTime = document.querySelector("#ticket-time");
 var ticketPrice = document.querySelector("#ticket-price");
 var flightTable = document.querySelector("#flight-table");
 var marsWeather = document.querySelector("#my-info");
+var bDay = document.querySelector("#DOB")
 
 
 console.log(from, toward, dateInput);
@@ -74,11 +75,23 @@ function ticketGen(event) {
 
     event.preventDefault();
 
+    var todayDate = new Date();
+    console.log(todayDate);
+        var getDate = function() {
+            var date = $(dateInput).find("input").text().trim();
+            console.log(date);
+            bday = moment(date, "L").set("hour", 17);
+            console.log(bday);
+        }
+    getDate();
 
     if(lastNameInput.value === "" || lastNameInput.value === null || firstNameInput.value === "" || firstNameInput.value === null) {
         alert("Please fill out all fields");
         return;
-    } else {
+    } else if(bday.isAfter(todayDate)) {
+            alert("Please select valid Date of Birth");
+            return;
+        } else {
 
         passengerInput.classList.add("hide");
         flightTable.classList.add("hide");
@@ -114,9 +127,6 @@ function backToMain() {
 
     location = "./index.html";
 };
-
-
-
 
 
 
