@@ -4,7 +4,7 @@
 
 // Globals
 let roverSelected = ""
-let solSelected = -1
+let solSelected = 0
 let cameraSelected = ""
 let earthDateSelected = ""
 
