@@ -30,6 +30,7 @@ var ticketAirline = document.querySelector("#ticket-airline");
 var ticketTime = document.querySelector("#ticket-time");
 var ticketPrice = document.querySelector("#ticket-price");
 var flightTable = document.querySelector("#flight-table");
+var marsWeather = document.querySelector("#my-info");
 
 
 console.log(from, toward, dateInput);
@@ -73,14 +74,20 @@ function ticketGen(event) {
 
     event.preventDefault();
 
-    passengerInput.classList.add("hide");
-    flightTable.classList.add("hide");
 
-    ticketDate.innerHTML = dateInput;
-    ticketFrom.innerHTML = "From: " + from;
-    ticketToward.innerHTML = "To: " + toward;
-    ticketLast.innerHTML = lastNameInput.value;
-    ticketFirst.innerHTML = firstNameInput.value;
+    if(lastNameInput.value === "" || lastNameInput.value === null || firstNameInput.value === "" || firstNameInput.value === null) {
+        alert("Please fill out all fields");
+        return;
+    } else {
+
+        passengerInput.classList.add("hide");
+        flightTable.classList.add("hide");
+
+        ticketDate.innerHTML = dateInput;
+        ticketFrom.innerHTML = "From: " + from;
+        ticketToward.innerHTML = "To: " + toward;
+        ticketLast.innerHTML = lastNameInput.value;
+        ticketFirst.innerHTML = firstNameInput.value;
 
 
 
@@ -89,17 +96,21 @@ function ticketGen(event) {
 
 
 
-    ticketResult.classList.remove("hide");
+        ticketResult.classList.remove("hide");
+        marsWeather.classList.remove("hide");
+    }
 };
 
 function returnBooking() {
     flightTable.classList.remove("hide");
     ticketResult.classList.add("hide");
+    marsWeather.classList.add("hide");
 };
 
 function backToMain() {
     flightTable.classList.remove("hide");
     ticketResult.classList.add("hide");
+    marsWeather.classList.add("hide");
 
     location = "./index.html";
 };
