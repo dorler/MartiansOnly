@@ -40,15 +40,7 @@
           </div>
         </header>
   
-        <!--Weather Widget-->
-   <!-- Foundation skeleton.... UI team to update with site styling -->
-   <div class="off-canvas position-right reveal-for-large" id="my-info" data-off-canvas data-position="left">
-    <div class="row column">
-      <br>
-      <iframe width="240px" height="870" scrolling="yes" frameborder="0"
-        src="http://cab.inta-csic.es/rems/wp-content/plugins/marsweather-widget/widget.php?lang=en"></iframe>
-    </div>
-  </div>
+
 
           
       <!--Rover Selector-->
@@ -73,6 +65,7 @@
               <p>You can retrieve up to 12 images from the rover database. Please understand that not every sol and/or
                 camera has an image to display based on weather and location limitations</p>
             </div>
+            <div class="marsimages">
             <div class="row small-up-2 medium-up-3 large-up-4">
               <div class="column">
                 <img class="thumbnail" id="image1" src="">
@@ -124,9 +117,10 @@
               </div>
             </div>
           </div>
+         </div>
         </div>
           <hr>
-          <div class="">
+          <div class="marsimages">
             <a href="https://mars.nasa.gov/layout/embed/image/m20weather/" class="button hollow expanded">Get the latest
               weather forecast! Courtesy NASA/JPL/Cal-Tech/CAB</a>
           </div>
@@ -176,8 +170,14 @@
         </div>
       </div>
     </div>
-  </main>
-
+  <!--Weather Widget-->
+  <div class="off-canvas position-right reveal-for-large hide" id="my-info" data-off-canvas data-position="left">
+    <div class="row column">
+      <br>
+      <iframe width="240px" height="870" scrolling="yes" frameborder="0"
+        src="http://cab.inta-csic.es/rems/wp-content/plugins/marsweather-widget/widget.php?lang=en"></iframe>
+    </div>
+  </div>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
