@@ -50,7 +50,7 @@ function priceGen() {
 function choseSpaceX(event) {
 
     event.preventDefault();
-
+    flightTable.classList.add("hide");
     passengerInput.classList.remove("hide");
 
    // ticketAirline.innerHTML = SpaceX.innerHTML
@@ -61,7 +61,7 @@ function choseSpaceX(event) {
 function choseNASA(event) {
 
     event.preventDefault();
-
+    flightTable.classList.add("hide");
     passengerInput.classList.remove("hide");
 
   //  ticketAirline.innerHTML = NASA.innerHTML
@@ -98,7 +98,7 @@ function ticketGen(event) {
 
         ticketResult.classList.remove("hide");
         marsWeather.classList.remove("hide");
-    }
+    };
 };
 
 function returnBooking() {

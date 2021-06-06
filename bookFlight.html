@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Flight Results </title>
+    <title> Book Flight </title>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="stylesheet" href="./assets/css/style.css"/>
   </head>
@@ -27,45 +27,48 @@
                 <td id="SpaceX">Space X</td>
                 <td id="timeSpaceX">9:00am</td>
                 <td id="priceSpaceX">  </td>
-                <td id="bookSpaceX"><button class="bookbtn" id="SpaceXbtn">Book</button></td>
+                <td id="bookSpaceX"><button class="button" id="SpaceXbtn">Book</button></td>
               </tr>
               <tr>
                 <td id="NASA">NASA</td>
                 <td id="timeNASA">4:00pm</td>
                 <td id="priceNASA"> </td>
-                <td id="bookNASA"><button class="bookbtn" id="NASAbtn">Book</button></td>
+                <td id="bookNASA"><button class="button" id="NASAbtn">Book</button></td>
               </tr>
             </tbody>
           </table>
         </div>
         <!--Ticket Form-->
-        <form id="submit-form" class="callout text-center hide">
+        <div id="submit-form" class="callout hide">
+        <form class="ticket-form">
             <h2>Book Your Ticket</h2>
             <div class="floated-label-wrapper">
-              <label for="first-name">Full name</label>
-              <input type="text" id="first-name" name="First Name input" placeholder="First name">
+              <label for="first-name"> First Name:
+              </label>
+              <input type="text" id="first-name" name="First Name input" placeholder="">
             </div>
             <div class="floated-label-wrapper">
-              <label for="last-name">Last Name</label>
-              <input type="last-name" id="last-name" name="Last Name input" placeholder="Last Name">
+              <label for="last-name"> Last Name:
+              </label>
+              <input type="text" id="last-name" name="Last Name input" placeholder="">
             </div>
             <div class="floated-label-wrapper">
               <label for="DOB">Date of Birth</label>
-              <input type="date" id="DOB" name="DOB" placeholder="DOB">
+              <input type="date" id="DOB" name="DOB" placeholder="Date of Birth">
             </div>
             <input id="book-flight" class="button expanded" type="submit" value="Book Flight">
           </form>
-        
+        </div>
       <!--Ticket -->
         <div id="marsticket" class="marsticket hide">
           <div>
-            <p>Congrats on your one way ticket to mars, it will certainly be out of this world.</p>
-            <h2 id="ticket-first-name"> </h2> <h2 id="ticket-last-name"> </h2> 
+            <p>Congrats on your one way ticket to mars, it will certainly be a trip out of this world.</p>
+            <h2 id="ticket-first-name">  <h2 id="ticket-last-name"> </h2></h2> 
             <h3 id="ticket-from"> </h3> <h3 id="ticket-toward"> </h3>
             <p> Departing on <h3 id="ticket-date"> </h3> at: <h3 id="ticket-time"></h3> </p> 
           </div>
-          <input type="button" id="return" class="btn btn-primary" value="Back to Booking">
-          <input type="button" id="return-main" class="btn btn-primary" value="Main Page">
+          <input type="button" id="return" class="button" value="Back to Booking">
+          <input type="button" id="return-main" class="button" value="Main Page">
         </div>
       <!--Weather Widget-->
       <div class="weather-widget">
