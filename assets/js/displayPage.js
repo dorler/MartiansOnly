@@ -75,24 +75,21 @@ function ticketGen(event) {
 
     event.preventDefault();
 
-    var todayDate = new Date();
-    console.log(todayDate);
-        var getDate = function() {
-            var date = $(dateInput).find("input").text().trim();
-            console.log(date);
-            bday = moment(date, "L").set("hour", 17);
-            console.log(bday);
-        }
-    getDate();
+    let validDate = new Date(bDay)
+
+    var dateOne = Date.parse("01/01/1920")
+    var dateTwo = Date.now()
 
     if(lastNameInput.value === "" || lastNameInput.value === null || firstNameInput.value === "" || firstNameInput.value === null) {
-        alert("Please fill out all fields");
-        return;
-    } else if(bday.isAfter(todayDate)) {
-            alert("Please select valid Date of Birth");
-            return;
-        } else {
-
+        lastNameInput.value = "Doe";
+        firstNameInput.value = "John";
+    }
+    if((validDate >= dateOne) && (validDate <= dateTwo )) {
+        // date is valid
+    } else {
+        bday = dateTwo
+    }
+        console.log(bday);
         passengerInput.classList.add("hide");
         flightTable.classList.add("hide");
 
@@ -111,7 +108,6 @@ function ticketGen(event) {
 
         ticketResult.classList.remove("hide");
         marsWeather.classList.remove("hide");
-    };
 };
 
 function returnBooking() {

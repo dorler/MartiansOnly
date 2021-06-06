@@ -13,10 +13,19 @@ function saveFlight(event) {
 
     console.log(departFrom, destination, departDate);
 
-    if(departDate.value === "" || departDate.value === null || destination.value === "" || destination.value === null || departFrom.value === "" || departFrom.value === null) {
-        alert("Please fill out all fields");
-        location = "./index.html";
-    } else {
+    let validDate = new Date(departDate)
+
+    var dateTwo = Date.now()
+
+    if(departDate.value === "" || departDate.value === null || validDate < dateTwo) {
+        departDate.value = dateTwo
+    }
+    if(destination.value === "" || destination.value === null) {
+        destination.value = "Curiosity"
+    }
+    if(departFrom.value === "" || departFrom.value === null) {
+        departFrom.value = "USA"
+    }
 
     localStorage.setItem("departFromLS", departFrom.value);
 
@@ -26,6 +35,5 @@ function saveFlight(event) {
 
     console.log(departFrom.value, destination.value, departDate.value);
 
-    location = "./bookFlight.html";
-    };
+     location = "./bookFlight.html";
 }
