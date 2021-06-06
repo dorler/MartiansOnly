@@ -1,3 +1,5 @@
+var SpaceXbtn = document.querySelector("#SpaceXbtn");
+var NASAbtn = document.querySelector("#NASAbtn");
 var bookSpaceX = document.querySelector("#bookSpaceX");
 var bookNASA = document.querySelector("#bookNASA");
 var SpaceX = document.querySelector("#SpaceX");
@@ -38,7 +40,19 @@ function priceGen() {
     
 };
 
-/*
+function choseSpaceX() {
+    ticketAirline.innerHTML = SpaceX.innerHTML
+    ticketPrice.innerHTML = priceSpaceX.innerHTML
+    ticketTime.innerHTML = timeSpaceX.innerHTML
+};
+
+function choseNASA() {
+    ticketAirline.innerHTML = NASA.innerHTML
+    ticketPrice.innerHTML = priceNASA.innerHTML
+    ticketTime.innerHTML = timeNASA.innerHTML
+};
+
+
 function ticketGen() {
     passengerInput.classList.add("hide");
 
@@ -51,11 +65,18 @@ function ticketGen() {
     var ticketLast = lastNameInput;
     var ticketFirst = firstNameInput;
 
+    /*
     if(bookSpaceX === document.activeElement) {
         ticketAirline.innerHTML = SpaceX.innerHTML
         ticketPrice.innerHTML = priceSpaceX.innerHTML
         ticketTime.innerHTML = timeSpaceX.innerHTML
-    };
+    } else if(bookNASA === document.activeElement) {
+        ticketAirline.innerHTML = NASA.innerHTML
+        ticketPrice.innerHTML = priceNASA.innerHTML
+        ticketTime.innerHTML = timeNASA.innerHTML
+    } else {
+        alert("Please select which which flight you'd like to book!")
+    }
 
 
 
@@ -67,8 +88,8 @@ function ticketGen() {
 
     ticketResult.classList.remove("hide");
 };
-*/
 
+    */
 
 
 
@@ -94,3 +115,5 @@ function ticketGen() {
 
 priceGen();
 bookFlight.addEventListener("click", ticketGen);
+SpaceXbtn.addEventListener("click", choseSpaceX);
+NASAbtn.addEventListener("click", choseNASA);
