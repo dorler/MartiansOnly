@@ -46,8 +46,19 @@ label {
   height: 870;
 }
 
-.spacex {
-  image: src("images/1546981484841.jpg");
+.ticket-form {
+  background-color: #fefefe;
+  text-align: center;
+  color: black;
+}
+
+.ticket-form label {
+  color: black;
+  text-align: left;
+}
+
+.marsticket {
+  color: white;
 }
 
 /* About Us Page */
