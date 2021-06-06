@@ -115,6 +115,27 @@ const pDataResults = function passDataResults(){
 
 }
 
+
+
+// Using different fetch commands for NASA image library because it has to be encoded
+async function getLibraryData(url = '', data = {}) {
+  // Default options are marked with *
+  const response = await fetch(url, {
+    method: 'GET', 
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    //body: JSON.stringify(data) // body data type must match "Content-Type" header
+  });
+  return response.json(); // parses JSON response into native JavaScript objects
+}
+
 function selectCuriosity(){
   //This will fill the select options for the camera choices on Curiosity
   // create option using DOM
@@ -208,38 +229,16 @@ function fetchRoverImages(){
     }
   });
   console.log("Starting fetch 2")
-  console.log(api2Url)
-  GET (api2Url).then(function(response) {
-    // request was successful
-    if (response.ok) {
-      response.json().then(function(data) {
-        console.log(data);
-        // Retrieved data, update image sources
-        debugger
-        // for (i=1;i<13;i++){
-        //   imgLocation = "#image" + i.toString()
-        //   imgElement = document.querySelector(imgLocation)
-        //   if (data.photos[i-1]){
-        //     imgElement.src = data.photos[i-1].img_src
-        //     imgElement.style.visibility = "visible"
-        //     document.querySelector(imgLocation + "Caption").textContent = data.photos[i-1].earth_date
-        //   }
-        //   else if (i===1) {
-        //     // No images for this search
-        //     imgElement.src = ""
-        //     document.querySelector("#image1Caption").textContent = "No results returned"
-        //   }
-        //   else{
-        //     imgElement.style.visibility = "hidden"
-        //     document.querySelector(imgLocation + "Caption").textContent = ""
-        //   }
-        // }
-      });
-    }
-    else {
-      console.log("Error with request 2!");
-    }
+
+const otherParams = "?q=Curiosity"
+const otherParamsEncoded = encodeURIComponent(otherParams)
+
+getLibraryData('https://images-api.nasa.gov/search', {otherParamsEncoded})
+  .then(data => {
+    console.log(data); // JSON data parsed by `data.json()` call
   });
+
+
 }
 
 
