@@ -296,3 +296,7 @@ label {
   flex-direction: column;
   align-items: center;
 }
+
+.marsticket {
+  color: #fefefe;
+}
