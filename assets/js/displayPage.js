@@ -7,15 +7,15 @@ var NASA = document.querySelector("#NASA");
 var timeSpaceX = document.querySelector("#timeSpaceX");
 var timeNASA = document.querySelector("#timeNASA");
 var bookFlight = document.querySelector("#book-flight");
-var passengerInput = document.querySelector("#passenger-input");
-var ticketResult = document.querySelector("#ticket-result");
+var passengerInput = document.querySelector("#submit-form");
+var ticketResult = document.querySelector("#marsticket");
 var departFrom = document.querySelector("#departure-option");
 var destination = document.querySelector("#destination");
 var departDate = document.querySelector("#dateSelector");
 var priceSpaceX = document.querySelector("#priceSpaceX");
 var priceNASA = document.querySelector("#priceNASA");
 var firstNameInput = document.querySelector("#first-name");
-var lastNameInput = document.querySelector("#DOB");
+var lastNameInput = document.querySelector("#last-name");
 var from = localStorage.getItem("departFromLS");
 var toward = localStorage.getItem("destinationLS");
 var dateInput = localStorage.getItem("departDateLS");
@@ -24,6 +24,10 @@ var ticketFrom = document.querySelector("#ticket-from");
 var ticketToward = document.querySelector("#ticket-toward");
 var ticketLast = document.querySelector("#ticket-last-name");
 var ticketFirst = document.querySelector("#ticket-first-name");
+var ticketAirline = document.querySelector("#ticket-airline");
+var ticketTime = document.querySelector("#ticket-time");
+var ticketPrice = document.querySelector("#ticket-price");
+var flightTable = document.querySelector("#flight-table");
 
 
 console.log(from, toward, dateInput);
@@ -40,44 +44,37 @@ function priceGen() {
     
 };
 
-function choseSpaceX() {
-    ticketAirline.innerHTML = SpaceX.innerHTML
-    ticketPrice.innerHTML = priceSpaceX.innerHTML
+function choseSpaceX(event) {
+
+    event.preventDefault();
+
+   // ticketAirline.innerHTML = SpaceX.innerHTML
+    // ticketPrice.innerHTML = priceSpaceX.innerHTML
     ticketTime.innerHTML = timeSpaceX.innerHTML
 };
 
-function choseNASA() {
-    ticketAirline.innerHTML = NASA.innerHTML
-    ticketPrice.innerHTML = priceNASA.innerHTML
+function choseNASA(event) {
+
+    event.preventDefault();
+
+  //  ticketAirline.innerHTML = NASA.innerHTML
+  //  ticketPrice.innerHTML = priceNASA.innerHTML
     ticketTime.innerHTML = timeNASA.innerHTML
 };
 
 
-function ticketGen() {
+function ticketGen(event) {
+
+    event.preventDefault();
+
     passengerInput.classList.add("hide");
+    flightTable.classList.add("hide");
 
-    var ticketAirline = document.querySelector("#ticket-airline");
-    var ticketTime = document.querySelector("#ticket-time");
-    var ticketPrice = document.querySelector("#ticket-price");
-    ticketDate = dateInput.innerHTML;
-    ticketFrom = from.innerHTML;
-    ticketToward = toward.innerHTML;
-    var ticketLast = lastNameInput;
-    var ticketFirst = firstNameInput;
-
-    /*
-    if(bookSpaceX === document.activeElement) {
-        ticketAirline.innerHTML = SpaceX.innerHTML
-        ticketPrice.innerHTML = priceSpaceX.innerHTML
-        ticketTime.innerHTML = timeSpaceX.innerHTML
-    } else if(bookNASA === document.activeElement) {
-        ticketAirline.innerHTML = NASA.innerHTML
-        ticketPrice.innerHTML = priceNASA.innerHTML
-        ticketTime.innerHTML = timeNASA.innerHTML
-    } else {
-        alert("Please select which which flight you'd like to book!")
-    }
-
+    ticketDate.innerHTML = dateInput;
+    ticketFrom.innerHTML = "From: " + from;
+    ticketToward.innerHTML = "To: " + toward;
+    ticketLast.innerHTML = lastNameInput.value;
+    ticketFirst.innerHTML = firstNameInput.value;
 
 
 
@@ -89,7 +86,7 @@ function ticketGen() {
     ticketResult.classList.remove("hide");
 };
 
-    */
+
 
 
 
