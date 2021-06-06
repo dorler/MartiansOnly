@@ -120,6 +120,7 @@ const pDataResults = function passDataResults(){
 // Using different fetch commands for NASA image library because it has to be encoded
 async function getLibraryData(url = '', data = {}) {
   // ran into problems with the url request, so I'm concat-ing the search param un-encoded
+  // issue with Nasa site changes since the API documentation...
   console.log("Fetch 2: " + url)
   const response = await fetch(url, {
     method: 'GET', 
@@ -169,6 +170,8 @@ function fetchRoverImages(){
   solSelected = document.querySelector("#solDate").value
   let imgLocation = ""
   let imgElement = ""
+  let randomPull = ""  //Using this to pull randomly from the resultant array
+
   if (solSelected.length>0){
     //User input a sol value
     solDate = testSolDate(solDate,0,3400) //make sure it's a number within the max range
@@ -207,9 +210,12 @@ function fetchRoverImages(){
           imgLocation = "#image" + i.toString()
           imgElement = document.querySelector(imgLocation)
           if (data.photos[i-1]){
-            imgElement.src = data.photos[i-1].img_src
+            randomPull = data.photos[parseInt(Math.floor(Math.random()*data.photos.length))]
+            imgElement.src = randomPull.img_src
+            //imgElement.src = data.photos[i-1].img_src -- Doing random pull instead now
             imgElement.style.visibility = "visible"
-            document.querySelector(imgLocation + "Caption").textContent = data.photos[i-1].earth_date
+            document.querySelector(imgLocation + "Caption").textContent = randomPull.earth_date
+            //document.querySelector(imgLocation + "Caption").textContent = data.photos[i-1].earth_date
           }
           else if (i===1) {
             // No images for this search
@@ -241,10 +247,12 @@ getLibraryData(api2Url + otherParams,{otherParamsEncoded})
           if (data.collection.items[i-1]){
             //Have to do another fetch from the href returned if we want to show the image/video 
             //versus just a link to the array. Deciding not to because of UI changes and lack of time.
-            imgElement.href = data.collection.items[i-1].href
+            randomPull = data.collection.items[parseInt(Math.floor(Math.random()*data.collection.items.length))]
+            imgElement.href = randomPull.href
+            //imgElement.href = data.collection.items[i-1].href
             imgElement.style.visibility = "visible"
-            imgElement.textContent = data.collection.items[i-1].data[0].title
-           // document.querySelector(imgLocation + "Caption").textContent = data.collection.items[i-1].data[0].title
+            imgElement.textContent = randomPull.data[0].title
+            //imgElement.textContent = data.collection.items[i-1].data[0].title
           }
           else if (i===1) {
             // No images for this search
@@ -257,26 +265,22 @@ getLibraryData(api2Url + otherParams,{otherParamsEncoded})
           }
     }
   });
-
-
 }
 
-
-
-//This async function will get specific images off the NASA images api
-const getImage = async function nasaImagesAPI() {
-    try {
-      let response = await fetch('image.jpg');
+// //This async function will get specific images off the NASA images api
+// const getImage = async function nasaImagesAPI() {
+//     try {
+//       let response = await fetch('image.jpg');
   
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      //TODO: stuff in here
+//       if (!response.ok) {
+//         throw new Error(`HTTP error! status: ${response.status}`);
+//       }
+//       //TODO: stuff in here
   
-    } catch(e) {
-      console.log(e);
-    }
-  }
+//     } catch(e) {
+//       console.log(e);
+//     }
+//   }  ** Deprecated --- new function getLibrary used instead
 
 
 
