@@ -14,6 +14,11 @@ function saveFlight(event) {
 
     console.log(departFrom, destination, departDate);
 
+    if(departDate.value === "" || departDate.value === null || destination.value === "" || destination.value === null || departFrom.value === "" || departFrom.value === null) {
+        alert("Please fill out all fields");
+        location = "./index.html";
+    } else {
+
     localStorage.setItem("departFromLS", departFrom.value);
 
     localStorage.setItem("destinationLS", destination.value);
@@ -23,5 +28,5 @@ function saveFlight(event) {
     console.log(departFrom.value, destination.value, departDate.value);
 
     location = "./bookFlight.html";
-
+    };
 }
