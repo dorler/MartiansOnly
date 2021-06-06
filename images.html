@@ -1,16 +1,16 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Travel to Mars | Welcome</title>
-  <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mars Images Page </title>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
 
 <body>
 
-  <!--NAvigation Bar-->
+  <!--Navigation Bar-->
   <div class="title-bar" data-responsive-toggle="realEstateMenu">
     <div class="title-bar-inner-container">
       <ul class="menu" data-responsive-menu="accordion" id="navigation-bar">
@@ -23,43 +23,29 @@
     </div>
   </div>
 
+  
+        
+  <div class="title-bar hide-for-large">
+    <div class="title-bar-left">
+     </div>
+   </div>
+  <main class="grid-contianer">
 
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Travel to Mars | Welcome</title>
-    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-  </head>
-
-  <body>
-    <!-- Foundation skeleton.... UI team to update with site styling -->
-    <div class="off-canvas-wrapper">
-      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-
-        <div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left">
-          <div class="row column">
-            <br>
-            <iframe width="240px" height="870" scrolling="yes" frameborder="0"
-              src="http://cab.inta-csic.es/rems/wp-content/plugins/marsweather-widget/widget.php?lang=en"></iframe>
-          </div>
-        </div>
-
-        <div class="off-canvas-content" data-off-canvas-content>
-          <div class="title-bar hide-for-large">
-            <div class="title-bar-left">
-              <button class="menu-icon" type="button" data-open="mars-weather"></button>
-              <span class="title-bar-title">Mars Images</span>
-            </div>
-          </div>
-          <div class="callout primary">
-            <div class="row column">
+     <!--Hero Section -->
+     <header class="hero-section">
+        <div class="hero-section-text">
               <h1>Congratulations on your upcoming trip to MARS!</h1>
-              <p class="lead">To familiarize yourself with the weather and landing locations, please take advantage of
-                our
-                weather and imaging services.</p>
-            </div>
+              <p.>We would appreciate if you familiarize yourself with the weather and landing locations, through our
+                our weather and imaging services below.</p>
           </div>
-          <div class="grid-x grid-padding-x">
+        </header>
+  
+
+
+          
+      <!--Rover Selector-->
+    <div class="grid-x grid-padding-x">
+      <div class="roverselector">
             <div class="large-6 medium-6 cell">
               <label>Choose Rover</label>
               <input type="radio" name="rover" value="Curiosity" id="roverCuriosity"><label
@@ -75,10 +61,11 @@
               <label>Select Camera</label>
               <select id="selectCamera">
               </select>
-              <a href="#" id="fetchRoverImages" class="success button">Get Images</a><br />
+              <a href="#" id="fetchRoverImages" i class="fa fa-search">Get Images</a>
               <p>You can retrieve up to 12 images from the rover database. Please understand that not every sol and/or
                 camera has an image to display based on weather and location limitations</p>
             </div>
+            <div class="marsimages">
             <div class="row small-up-2 medium-up-3 large-up-4">
               <div class="column">
                 <img class="thumbnail" id="image1" src="">
@@ -130,8 +117,10 @@
               </div>
             </div>
           </div>
+         </div>
+        </div>
           <hr>
-          <div class="">
+          <div class="marsimages">
             <a href="https://mars.nasa.gov/layout/embed/image/m20weather/" class="button hollow expanded">Get the latest
               weather forecast! Courtesy NASA/JPL/Cal-Tech/CAB</a>
           </div>
@@ -181,6 +170,14 @@
         </div>
       </div>
     </div>
+  <!--Weather Widget-->
+  <div class="off-canvas position-right reveal-for-large hide" id="my-info" data-off-canvas data-position="left">
+    <div class="row column">
+      <br>
+      <iframe width="240px" height="870" scrolling="yes" frameborder="0"
+        src="http://cab.inta-csic.es/rems/wp-content/plugins/marsweather-widget/widget.php?lang=en"></iframe>
+    </div>
+  </div>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
@@ -189,5 +186,5 @@
       $(document).foundation();
     </script>
   </body>
-
+</main>
 </html>
