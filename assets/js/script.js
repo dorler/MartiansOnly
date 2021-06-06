@@ -5,8 +5,6 @@ var departDate = document.querySelector("#departure-date");
 
 
 
-searchBtn.addEventListener("click", saveFlight);
-
 function saveFlight(event) {
 
     event.preventDefault();
@@ -38,3 +36,6 @@ function saveFlight(event) {
 
      location = "./bookFlight.html";
 }
+
+
+searchBtn.addEventListener("click", saveFlight);
