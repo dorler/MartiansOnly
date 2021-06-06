@@ -74,14 +74,20 @@ function ticketGen(event) {
 
     event.preventDefault();
 
-    passengerInput.classList.add("hide");
-    flightTable.classList.add("hide");
 
-    ticketDate.innerHTML = dateInput;
-    ticketFrom.innerHTML = "From: " + from;
-    ticketToward.innerHTML = "To: " + toward;
-    ticketLast.innerHTML = lastNameInput.value;
-    ticketFirst.innerHTML = firstNameInput.value;
+    if(lastNameInput.value === "" || lastNameInput.value === null || firstNameInput.value === "" || firstNameInput.value === null) {
+        alert("Please fill out all fields");
+        return;
+    } else {
+
+        passengerInput.classList.add("hide");
+        flightTable.classList.add("hide");
+
+        ticketDate.innerHTML = dateInput;
+        ticketFrom.innerHTML = "From: " + from;
+        ticketToward.innerHTML = "To: " + toward;
+        ticketLast.innerHTML = lastNameInput.value;
+        ticketFirst.innerHTML = firstNameInput.value;
 
 
 
@@ -90,8 +96,9 @@ function ticketGen(event) {
 
 
 
-    ticketResult.classList.remove("hide");
-    marsWeather.classList.remove("hide");
+        ticketResult.classList.remove("hide");
+        marsWeather.classList.remove("hide");
+    }
 };
 
 function returnBooking() {
