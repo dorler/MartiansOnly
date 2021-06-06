@@ -15,7 +15,8 @@ function saveFlight(event) {
 
     let validDate = new Date(departDate)
 
-    var dateTwo = Date.now()
+    var dateTwo = new Date()
+    console.log(dateTwo);
 
     if(departDate.value === "" || departDate.value === null || validDate < dateTwo) {
         departDate.value = dateTwo
@@ -35,5 +36,5 @@ function saveFlight(event) {
 
     console.log(departFrom.value, destination.value, departDate.value);
 
-     location = "./bookFlight.html";
+    // location = "./bookFlight.html";
 }
