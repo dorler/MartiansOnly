@@ -10,61 +10,66 @@
   
   <body >
     <!--Navigation Bar-->
-    <div class="title-bar" data-responsive-toggle="realEstateMenu" data-hide-for="small">
-      <div class="top-bar-left">
+    <div class="title-bar" data-responsive-toggle="realEstateMenu">
+      <div class="title-bar-inner-container">
         <ul class="menu" data-responsive-menu="accordion" id="navigation-bar">
           <li class="menu-text">MarsX</li>
           <li><a href="#">Flights</a></li>
-          <li><a href="./about-us.html">Learn More</a></li>
+          <li><a href="./aboutUs.html">Learn More</a></li>
           <li><a href="./images.html">Image Gallery</a></li>
           <li><a href="#contactus">Contact Us</a></li>
         </ul>
       </div>
     </div>
 
-    <!--Mars Hero-->
-      <header class="hero-section" id="hero">
-        <div class="hero-section-text">
-          <h1> Vacation on Mars</h1>
-          <h4><small> We are excited to offically announce the opportunity for individuals to
-               book there tickets to finally leave this planet. </small>
-          </h4>
-        </div>
-      </header>
-
+    <main class="grid-container">
       
-    <!--Search Form-->
-      <div class="hero-search-filter-content">
-        <img class="hero-search-filter-logo" src="https://placehold.it/160x80" alt="" />
-        <form class="hero-search-filter-form" action="">
-          <label for="Departure">Departing: </label>
-          <select id="depart" class="hero-search-filter-form-find" type="dropdown">
-            <option value = ""></option>
-            <option value = "USA" id="USA" >United States</option>
-            <option value = "China" id="China">China</option>
-            <option value = "Russia" id="Russia">Russia</option>
-          </select>
-          <div class="divider">&nbsp;</div>
-          <label for="arrival">Arriving: </label>
-          <select id="arrival" class="hero-search-filter-form-near" type="dropdown">
-            <option value=""></option>
-            <option value = "Soujourn">Soujorn</option>
-            <option value = "Curiousity">Curiosity</option>
-            <option value = "Spirit">Spirit</option>
-            <option value = "Perseverance">Perseverance</option>
-            </select>
-          <div class="divider">&nbsp;</div>
-          <label for="departure-date"> </label>
-          <input type="date" id="departure-date">
-          <button class="button" id="search-flight"><i class="fa fa-search">Search</i></button>
-        </form>
-      </div>
-  
-  <article class="blockquote">
-  <blockquote>
-   Space exploration is a force of nature unto itself that no other force in society can rival. 
-   <cite>Neil deGrasse Tyson</cite>
-  </article>
+          <!--Mars Hero-->
+            <header class="hero-section" id="hero">
+              <div class="hero-section-text">
+                <h1> Vacation on Mars</h1>
+                <h4><small> We are excited to offically announce the opportunity for individuals to
+                     book there tickets to finally leave this planet. </small>
+                </h4>
+              </div>
+            </header>
+      
+            
+          <!--Search Form-->
+            <div class="hero-search-filter-content">
+              <img class="hero-search-filter-logo" src="https://placehold.it/160x80" alt="" />
+              <form class="hero-search-filter-form" action="">
+                <label for="Departure">Departing: </label>
+                <select id="depart" class="hero-search-filter-form-find" type="dropdown">
+                  <option value = ""></option>
+                  <option value = "USA" id="USA" >United States</option>
+                  <option value = "China" id="China">China</option>
+                  <option value = "Russia" id="Russia">Russia</option>
+                </select>
+                <div class="divider">&nbsp;</div>
+                <label for="arrival">Arriving: </label>
+                <select id="arrival" class="hero-search-filter-form-near" type="dropdown">
+                  <option value=""></option>
+                  <option value = "Soujourn">Soujorn</option>
+                  <option value = "Curiousity">Curiosity</option>
+                  <option value = "Spirit">Spirit</option>
+                  <option value = "Perseverance">Perseverance</option>
+                  </select>
+                <div class="divider">&nbsp;</div>
+                <label for="departure-date"> </label>
+                <input type="date" id="departure-date">
+                <button class="button" id="search-flight"><i class="fa fa-search">Search</i></button>
+              </form>
+            </div>
+        
+        <div class="blockquote">
+        <blockquote>
+         Space exploration is a force of nature unto itself that no other force in society can rival. 
+         <cite>Neil deGrasse Tyson</cite>
+        </div>
+
+
+    </main>
 
       <!--Footer-->
       <footer class="marketing-site-footer">

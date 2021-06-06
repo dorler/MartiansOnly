@@ -1,7 +1,7 @@
 
 var searchBtn = document.querySelector("#search-flight");
-var departFrom = document.querySelector("#departure-option");
-var destination = document.querySelector("#destination");
+var departFrom = document.querySelector("#depart");
+var destination = document.querySelector("#arrival");
 var departDate = document.querySelector("#departure-date");
 
 
@@ -22,6 +22,6 @@ function saveFlight(event) {
 
     console.log(departFrom.value, destination.value, departDate.value);
 
-    //location = "./result.html";
+    location = "./bookFlight.html";
 
 }
