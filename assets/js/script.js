@@ -36,5 +36,5 @@ function saveFlight(event) {
 
     console.log(departFrom.value, destination.value, departDate.value);
 
-    // location = "./bookFlight.html";
+     location = "./bookFlight.html";
 }
