@@ -15,7 +15,7 @@ const nasaImagesURL = "https://images-api.nasa.gov"
 
 // From https://github.com/chrisccerami/mars-photo-api
 const nasaRoverPhotos = "https://mars-photos.herokuapp.com/"  //This is the one that doesn't require an API key
-const nasaImageLibrary = "https://images-api.nasa.gov/"       //This is the main NASA images repository
+const nasaImageLibrary = "https://images-api.nasa.gov/search"       //This is the main NASA images repository
 const nasaImageCORS = "http://nasaimages.herokuapp.com"
 
 
@@ -119,21 +119,20 @@ const pDataResults = function passDataResults(){
 
 // Using different fetch commands for NASA image library because it has to be encoded
 async function getLibraryData(url = '', data = {}) {
-  // Default options are marked with *
+  // ran into problems with the url request, so I'm concat-ing the search param un-encoded
+  console.log("Fetch 2: " + url)
   const response = await fetch(url, {
     method: 'GET', 
-    mode: 'cors', // no-cors, *cors, same-origin
-    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'same-origin', // include, *same-origin, omit
+    mode: 'cors', 
+    cache: 'no-cache', 
+    credentials: 'same-origin', 
     headers: {
       'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded',
     },
-    redirect: 'follow', // manual, *follow, error
-    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-    //body: JSON.stringify(data) // body data type must match "Content-Type" header
+    redirect: 'follow', 
+    referrerPolicy: 'no-referrer'
   });
-  return response.json(); // parses JSON response into native JavaScript objects
+  return response.json(); 
 }
 
 function selectCuriosity(){
@@ -166,7 +165,7 @@ function fetchRoverImages(){
   let qry1b = ""
   let qry2b = ""
   let apiUrl = nasaRoverPhotos + "api/v1/rovers/" + roverSelected + "/photos?"
-  let api2Url = nasaImageCORS + "/#/search/Mars"
+  let api2Url = nasaImageLibrary
   solSelected = document.querySelector("#solDate").value
   let imgLocation = ""
   let imgElement = ""
@@ -230,12 +229,33 @@ function fetchRoverImages(){
   });
   console.log("Starting fetch 2")
 
-const otherParams = "?q=Curiosity"
+const otherParams = "?q=" + roverSelected
 const otherParamsEncoded = encodeURIComponent(otherParams)
 
-getLibraryData('https://images-api.nasa.gov/search', {otherParamsEncoded})
+getLibraryData(api2Url + otherParams,{otherParamsEncoded})
   .then(data => {
-    console.log(data); // JSON data parsed by `data.json()` call
+    console.log(data); //already parsed from function call
+    for (i=1;i<13;i++){
+      imgLocation = "#library" + i.toString()
+          imgElement = document.querySelector(imgLocation)
+          if (data.collection.items[i-1]){
+            //Have to do another fetch from the href returned if we want to show the image/video 
+            //versus just a link to the array. Deciding not to because of UI changes and lack of time.
+            imgElement.href = data.collection.items[i-1].href
+            imgElement.style.visibility = "visible"
+            imgElement.textContent = data.collection.items[i-1].data[0].title
+           // document.querySelector(imgLocation + "Caption").textContent = data.collection.items[i-1].data[0].title
+          }
+          else if (i===1) {
+            // No images for this search
+            imgElement.src = ""
+            document.querySelector("#library1Caption").textContent = "No results returned"
+          }
+          else{
+            imgElement.style.visibility = "hidden"
+            document.querySelector(imgLocation + "Caption").textContent = ""
+          }
+    }
   });
 
 
@@ -263,11 +283,14 @@ const getImage = async function nasaImagesAPI() {
 // Event Listeners
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('Search page loaded');
+    //set default rover on load in case user just hits the get images button before selecting
+    $("#roverPerseverance").click();
 });
 
 // create event listener on search button to call flightFetch
 $("#search-btn").click(function() {
     location = $("#location").val();
+    //Waiting for specs to pass data
     flightFetch(location);
   });
 
